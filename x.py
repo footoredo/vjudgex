@@ -111,8 +111,13 @@ class X:
 	def setlang(self, language):
 		self.language = language
 
-	def input_language(self):
+	def input_language(self, default):
 		languages = self.ojlanguages[self.OJ]
+		if default != None:
+			print "Your default language is [%s]: %s, change? [y/N]" % (default, languages[default])
+			resp = raw_input()
+			if resp != 'y':
+				return default
 		while True:
 			for key, value in languages.iteritems():
 				print "[%s]: %s" % (key, value)

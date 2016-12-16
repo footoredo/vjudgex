@@ -3,3 +3,5 @@ test*
 *.html
 *.pem
 *.js
+*.pkl
+*.cpp
