@@ -1,7 +1,8 @@
 import pickle
 import os
 
-config_file = 'config.pkl'
+home_path = os.environ.get('HOME')
+config_file = '%s/.config.pkl' % home_path
 
 def clear():
     if os.path.isfile(config_file):
@@ -19,6 +20,7 @@ def save_obj(raw_obj, origin):
 def load_obj():
     if os.path.isfile(config_file):
         with open(config_file, 'rb') as f:
+            print "got."
             return pickle.load(f)
     else:
         return {
